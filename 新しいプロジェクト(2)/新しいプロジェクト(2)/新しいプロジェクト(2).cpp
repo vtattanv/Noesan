@@ -147,6 +147,14 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             PAINTSTRUCT ps;
             HDC hdc = BeginPaint(hWnd, &ps);
             // TODO: HDC を使用する描画コードをここに追加してください...
+
+            // 文字列を出力する
+            TCHAR msg[] = TEXT("Hello vtattanv");
+            TextOut(hdc, 0, 0, msg, lstrlen(msg));
+            
+            // 図形を出力する
+            Rectangle(hdc, 50, 50, 150, 100);
+
             EndPaint(hWnd, &ps);
         }
         break;
